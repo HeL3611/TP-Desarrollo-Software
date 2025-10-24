@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e2e2e2, #b4f1b4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    width: 764px;
+    max-width: 100%;
+    padding: 30px;
+    transition: 0.4s;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #348d4e;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+label {
+    font-weight: 500;
+    margin-top: 10px;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"] {
+    background-color: #eee;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+}
+
+button,
+#button-iniciar {
+    background-color: #348d4e;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+button:hover,
+#button-iniciar:hover {
+    background-color: #333;
+    color: #41bb66;
+}
+
+.logo-safe {
+    width: 220px;
+    position: relative;
+    margin: 20px auto;
+    display: block;
+}
+
+p {
+    text-align: center;
+    font-weight: 600;
+    color: #2e2e2e;
+}
+
+.volver-inicio {
+    display: block; /* Necesario para que margin auto funcione en elementos tipo inline */
+    margin: 20px auto 0 auto; /* Top: 20px, Auto en los costados para centrar */
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s;
+    border-radius: 5px;
+    background-color: #348d4e;
+    padding: 7px 14px;
+    position: relative;
+    z-index: 10;
+    width: 50%;
+}
+
+
+
+.volver-inicio:hover {
+    background-color: #333;
+    color: #41bb66;
+
+}
+
+
+.logo-safe {
+    width: 220px;
+    position: relative;
+    margin: -39px auto;
+    display: block;
+}
+
+.pin_temporal{
+    font-size: 312px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    button,
+    #button-iniciar {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .volver-inicio {
+    display: block;
+    margin: 20px auto 0 auto; /* centro automático */
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    background-color: #348d4e;
+    padding: 7px 16px;
+    
+}
+
+}

@@ -1,0 +1,74 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empleado</title>
+  <link rel="stylesheet" href="../../css/estilo_general_qr.css">
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+</head>
+<body>
+
+  <div class="panel">
+    <img class="logo-safe" src="../../../imagenes/Safe_Entry_Verde_Cut.png" alt="">    
+    <div class="container">
+        <div class="qr-section">
+          <div class="qr-icon" onclick="abrirCamara()">QR</div>
+          
+          <div class="qr-reader" id="qr-reader"></div>
+          <div id="qr-result"></div>
+          
+          <button class="cerrar-qr" id="cerrar-qr" onclick="cerrarCamara()">Cerrar</button>
+
+    </div>
+          <p class="qr-text">Presioná el botón para escanear el QR de acceso que está en la pantalla de la entrada.</p>
+
+  </div>
+<a class="atras" href="../inicio/index.html">atras</a>      
+</body>
+</html>
+<script>
+let html5QrCode;
+
+function abrirCamara() {
+    const qrReader = document.getElementById("qr-reader");
+    const btnCerrar = document.getElementById("cerrar-qr");
+    qrReader.innerHTML = ""; 
+    html5QrCode = new Html5Qrcode("qr-reader");
+
+    Html5Qrcode.getCameras().then(devices => {
+        if (devices && devices.length) {
+            const backCamera = devices[devices.length - 1];
+
+            html5QrCode.start(
+                backCamera.id,
+                {
+                    fps: 10,
+                    qrbox: 250
+                },
+                qrCodeMessage => {
+                    document.getElementById("qr-result").innerText = `QR Detectado: ${qrCodeMessage}`;
+                    cerrarCamara(); // Cerrá automáticamente después del escaneo
+                },
+                errorMessage => {
+                    console.warn(`Error escaneando: ${errorMessage}`);
+                }
+            ).then(() => {
+                btnCerrar.style.display = "inline-block"; // Mostrá el botón para cerrar
+            });
+        }
+    }).catch(err => {
+        console.error(`No se pudieron obtener las cámaras: ${err}`);
+    });
+}
+
+function cerrarCamara() {
+    if (html5QrCode) {
+        html5QrCode.stop().then(() => {
+            document.getElementById("qr-reader").innerHTML = "";
+            document.getElementById("cerrar-qr").style.display = "none";
+        }).catch(err => {
+            console.error("Error al detener el lector QR:", err);
+        });
+    }
+}
+</script>

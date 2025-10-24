@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="../../css/style_2.css" />
+    <link rel="icon" href="../../imagenes/Safe_Entry_Negro_icon.png" type="image/peng">
+
+    <title>Iniciar Sesión / Registrarse</title>
+  </head>
+
+  <body>
+  <!--<img class="logo-safe" src="../imagenes/Safe_Entry_Verde.png" alt="">-->
+    <div id="mensaje" style="text-align:center; margin-bottom: 25px;"></div>
+    <div id="mensaje_2" style="text-align: center; color: red; margin-bottom: 20px;"></div>
+
+    <div class="container" id="container">
+      <div class="form-container sign-up">
+        
+        <form action="../../database/procesar.php" name="access" method="post">
+          <h1>Registrarse</h1>
+          
+          <input type="text" name="usuario" placeholder="Nombre de usuario" required />          <!-- 
+          <input type="text" name="apelldo" placeholder="Apellido" required/>
+          <input type="text" name="dni" placeholder="D.N.I" required/>
+          -->
+          <input type="email" name="correo" placeholder="Email" required/>
+          <!-- 
+          <input type="text" name="telefono" placeholder="N° de celular" required/>
+          <input type="text" name="casa" placeholder="Casa asignada" required/>
+          -->
+          <select name="tipo">
+            <option name="tipo" value="residente">Residente</option>
+            <option name="tipo" value="empleado">Empleado</option>
+          </select>
+          <input type="password" name="contraseña" placeholder="Contraseña" required/>
+          <!-- 
+          <select name="tipo">
+            <option name="tipo" value="residente">Residente</option>
+            <option name="tipo" value="invitado">Invitado</option>
+            <option name="tipo" value="empleado">Empleado</option>
+          </select>
+          -->
+          <input id="button-registro" type="submit" name="registro" value="REGISTRARSE">
+          
+        </form>
+      </div>
+      <div class="form-container sign-in">
+        <form action="../../database/procesar.php" method="post">
+          <h1>Iniciar sesión</h1>
+          
+          <input type="text" name="usuario" placeholder="Nombre de usuario" required/>
+          <input type="password" name="contraseña" placeholder="Contraseña" required/>
+          <a href="index.html">Te olvidaste la contraseña?</a>
+          <input id="button-iniciar" type="submit" name="login" value="INICIAR">
+          
+        </form>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Bienvenido de nuevo!</h1>
+            <p>Inicia sesión para acceder al barrio cerrado</p>
+            <button class="hidden" id="login">Iniciar</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Hola, visitante!</h1>
+            <p>
+              Registrate para obtener el pin o escanear el codigo qr de acceso
+            </p>
+            <button class="hidden" id="register">Registrarse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      <img class="logo-safe" src="../../imagenes/Safe_Entry_Verde.png" alt="">
+    <script>
+        const container = document.getElementById("container");
+        const registerBtn = document.getElementById("register");
+        const loginBtn = document.getElementById("login");
+
+        registerBtn.addEventListener("click", () => {
+            container.classList.add("active");
+        });
+
+        loginBtn.addEventListener("click", () => {
+            container.classList.remove("active");
+        });
+    </script>
+
+
+    <script>
+      const mensaje = new URLSearchParams(window.location.search);
+      const contenedorMensaje = document.getElementById("mensaje");
+
+      if (mensaje.get("registro") === "exitoso") {
+        contenedorMensaje.innerHTML = "<p style='color: green;'>Registro exitoso.</p>";
+      } else if (mensaje.get("registro") === "error") {
+        contenedorMensaje.innerHTML = "<p style='color: red;'>Error al registrarse.</p>";
+      } else if (mensaje.get("registro") === "duplicado") {
+        contenedorMensaje.innerHTML = "<p style='color: red;'>El nombre de usuario ya existe. Elegí otro.</p>";
+      } else if (mensaje.get("login") === "error") {
+        contenedorMensaje.innerHTML = "<p style='color: red;'>Usuario o contraseña incorrectos.</p>";
+      }
+    </script>
+
+
+
+  </body>
+</html>

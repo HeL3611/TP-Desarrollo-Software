@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../../imagenes/Safe_Entry_Negro_icon.png" type="image/peng">  
+  <link rel="stylesheet" href="../../css/style_3.css" />
+  <title>Datos Empleado</title>
+</head>
+<body>
+
+  <div class="container" id="container">
+    <div class="form-container sign-in">
+      <form action="../../database/guardar_datos_empleado.php" method="post">
+        <h1>Bienvenido Empleado</h1>
+        <input type="text" name="nombre" placeholder="Nombre" required />
+        <input type="text" name="apellido" placeholder="Apellido" required />
+        <input type="text" name="dni" placeholder="D.N.I" required />
+        <input type="email" name="correo" placeholder="Email" required />
+        <input type="text" name="telefono" placeholder="N° de celular" required />
+        <input type="text" name="trabajo" placeholder="Sector / Trabajo" required />
+        
+        <input id="button-iniciar" type="submit" value="CONTINUAR" />
+      </form>
+    </div>
+  </div>
+        <img class="logo-safe" src="../../imagenes/Safe_Entry_Verde.png" alt="">
+
+</body>
+</html>

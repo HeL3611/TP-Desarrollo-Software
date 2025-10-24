@@ -1,0 +1,57 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitado</title>
+  <link rel="stylesheet" href="../../css/estilo_general.css">
+</head>
+<body>
+  <div class="panel">
+    <a class="atras" href="../inicio/index.html">←</a>
+    <div class="pin-container">
+    <h2>Ingrese PIN</h2>
+    <input type="password" id="pinInput" maxlength="6" readonly />
+    
+    <div class="pin-pad">
+      <button onclick="agregarDigito('1')">1</button>
+      <button onclick="agregarDigito('2')">2</button>
+      <button onclick="agregarDigito('3')">3</button>
+      <button onclick="agregarDigito('4')">4</button>
+      <button onclick="agregarDigito('5')">5</button>
+      <button onclick="agregarDigito('6')">6</button>
+      <button onclick="agregarDigito('7')">7</button>
+      <button onclick="agregarDigito('8')">8</button>
+      <button onclick="agregarDigito('9')">9</button>
+      <button class="opciones_2" onclick="borrar()">←</button>
+      <button onclick="agregarDigito('0')">0</button>
+      <button class="opciones_2" onclick="enviarPin()">OK</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<script>
+function agregarDigito(digito) {
+  const input = document.getElementById('pinInput');
+  if (input.value.length < input.maxLength) {
+    input.value += digito;
+  }
+}
+
+function borrar() {
+  const input = document.getElementById('pinInput');
+  input.value = input.value.slice(0, -1);
+}
+
+function enviarPin() {
+  const pin = document.getElementById('pinInput').value;
+  if (pin.length === 0) {
+    alert("Por favor ingrese un PIN.");
+    return;
+  }
+
+  // Acá podrías enviar el PIN a un archivo PHP para validarlo
+  console.log("PIN ingresado:", pin);
+  // Ejemplo: window.location.href = `validar_pin.php?pin=${pin}`;
+}
+</script>

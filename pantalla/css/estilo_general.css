@@ -1,0 +1,225 @@
+.pin-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pin-container h2 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+
+}
+
+#pinInput {
+  width: 100%;
+  font-size: 3rem;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 40px;
+  border: 2px solid #348d4e;
+  border-radius: 8px;
+  letter-spacing: 6px;
+}
+
+.pin-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.pin-pad button {
+  padding: 15px;
+  font-size: 4.7rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #348d4e;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pin-pad button:hover {
+  background-color: #2c2c2c;
+  color: #41bb66;
+}
+
+.pin-pad button.opciones_2{
+    background-color: #333;
+    color: #41bb66;
+}
+
+.pin-pad button.opciones_2:hover{
+    background-color: #348d4e;
+    color: #fff;
+}
+
+/*-------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e2e2e2, #b4f1b4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-height: 500px;
+    padding: 20px;
+}
+
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 4rem;
+}
+
+
+
+.logo-safe{
+    margin: 10px;
+}
+
+.panel {
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    min-height: 800px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    
+}
+
+
+
+.container ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 300px;
+
+}
+
+.container li {
+    margin: 12px 0;
+}
+
+.container a,.atras {
+    display: block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.atras{
+    font-size: 1.9rem;
+    position: absolute;
+    left: 45px;
+    padding-bottom: 15px;
+}
+
+
+
+.opciones_1 {
+    background-color: #348d4e;
+    color: white;
+    font-size: 3rem;
+}
+
+.opciones_1:hover {
+    background-color: #2b7440;
+    color: #d4f8d4;
+}
+
+.opciones_2{
+    font-size: 3rem;
+}
+
+
+
+.opciones_2, .atras {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.opciones_2, .atras:hover {
+    background-color: #333;
+    color: #41bb66;
+}
+
+.opciones_2:hover {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/*------------------------------*/
+
+
+.qr-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.qr-icon {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    font-size: 200px;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    min-width: 80px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.qr-icon:hover {
+    background-color: #b4f1b4;
+    color: #333;
+}
+
+.qr-text {
+    font-size: 14px;
+    color: #333;
+    max-width: 250px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.qr-reader {
+    width: 100%;
+    max-width: 500px;
+    position: absolute;
+}
+
+
+.cerrar-qr {
+    display: none;
+    background-color: #d9534f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.cerrar-qr:hover {
+    background-color: #c9302c;
+}

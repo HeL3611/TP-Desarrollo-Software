@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e2e2e2, #b4f1b4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Mensaje superior */
+#mensaje {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Contenedor principal */
+.container {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    width: 764px;
+    max-width: 100%;
+    padding: 30px;
+    transition: 0.4s;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #348d4e;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+input[type="text"],
+input[type="email"] {
+    background-color: #eee;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+}
+
+#button-iniciar {
+    background-color: #348d4e;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#button-iniciar:hover {
+    background-color: #333;
+    color: #41bb66;
+}
+
+.logo-safe {
+    width: 220px;
+    position: relative;
+    margin: 20px auto;
+    display: block;
+}
+
+
+/* ===========================
+   📱 Responsive (celulares)
+   =========================== */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 20px;
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    #button-iniciar {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/*-----mis_datos.php-----*/
+
+.guardar_cambios {
+    background-color: #2e7d32;
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.guardar_cambios:hover {
+    background-color: #1b5e20;
+}
+

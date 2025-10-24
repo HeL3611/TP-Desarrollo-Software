@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e2e2e2, #b4f1b4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.panel-residente {
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.panel-residente h1 {
+    font-size: 28px;
+    color: #348d4e;
+    margin-bottom: 30px;
+}
+
+.opciones ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.opciones li {
+    margin: 12px 0;
+}
+
+.opciones a {
+    display: block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.opciones_1 {
+    background-color: #348d4e;
+    color: white;
+}
+
+.opciones_1:hover {
+    background-color: #2b7440;
+    color: #d4f8d4;
+}
+
+.opciones_2 {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.opciones_2:hover {
+    background-color: #333;
+    color: #41bb66;
+}
+
+.logo-safe {
+    width: 180px;
+    margin: -39px
+}
+
+.qr-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+#canvas-qr{
+    position: absolute;
+    background-color: #2b7440;
+}
+
+.qr-icon {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    min-width: 80px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.qr-icon:hover {
+    background-color: #b4f1b4;
+    color: #333;
+}
+
+.qr-text {
+    font-size: 14px;
+    color: #333;
+    max-width: 250px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.qr-reader {
+    width: 100%;
+    max-width: 500px;
+    position: absolute;
+}
+
+
+.cerrar-qr {
+    display: none;
+    background-color: #d9534f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.cerrar-qr:hover {
+    background-color: #c9302c;
+}
+
+/* 📱 Estilos para móviles */
+@media screen and (max-width: 668px) {
+    body {
+        background: linear-gradient(to right, #e2e2e2, #b4f1b4) !important;
+        padding: 20px !important;
+        height: auto;
+    }
+
+    .panel-residente {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .qr-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin: 10px;
+    }
+
+    .qr-reader {
+        width: 100%;
+    }
+
+
+    .qr-text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+
